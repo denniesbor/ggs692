@@ -19,8 +19,24 @@
   </head>
   <body>
     <div class="container">
-      <h2>Web Based GIS Assignment 1</h2>
-      <div id="map"></div>
+      <div class="navbar"></div>
+      <div class="mainBody">
+        <h2>Web Based GIS Assignment 1</h2>
+        <form id="placeForm">
+          <label for="placeSelect">Select GMU Place</label>
+          <select id="placeSelect">
+            <!-- Options will be added here -->
+          </select>
+          <label for="Marker">Marker type</label>
+          <select id="markerType">
+            <option value="pin">Pin</option>
+            <option value="circle">Circle</option>
+          </select>
+          <button type="submit">Add Marker</button>
+        </form>
+        <div id="map"></div>
+      </div>
+      <div class="footer"></div>
     </div>
   </body>
   <script src="index.js"></script>
