@@ -1,9 +1,10 @@
 // Fetch data
 
+const data_path =
+  "https://gist.githubusercontent.com/denniesbor/a5b56f37f23147002a964c531b89de0f/raw/12405ea17e945b323901bfd7bc654b46c4008843/restaurant_data.geojson";
+
 const get_data = async () => {
-  res = await fetch(
-    "https://raw.githubusercontent.com/pfoser/tutorial-express-leaflet/master/code/leaflet_express_pug_data/Restaurant_data.geojson"
-  );
+  res = await fetch(data_path);
   return res.json();
 };
 
@@ -66,11 +67,11 @@ const addRestaurantMarkers = async () => {
     markerL.bindPopup(
       `Name: ${properties.NAME}<br>Cuisine: ${properties.CUISINE}`
     );
-    
+
     if (cuisines[properties.CUISINE]) {
       cuisines[properties.CUISINE].push(markerL);
     } else {
-      cuisines[properties.CUISINE] = [markerL]; 
+      cuisines[properties.CUISINE] = [markerL];
     }
 
     // add event listener for mouseover to open the popup
