@@ -4,8 +4,16 @@ const data_path =
   "https://gist.githubusercontent.com/denniesbor/a5b56f37f23147002a964c531b89de0f/raw/12405ea17e945b323901bfd7bc654b46c4008843/restaurant_data.geojson";
 
 const get_data = async () => {
-  res = await fetch(data_path);
-  return res.json();
+  try {
+    const response = await fetch(data_path);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+    return null; // Or handle the error as appropriate for your application
+  }
 };
 
 const dataFeatures = get_data();
