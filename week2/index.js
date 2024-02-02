@@ -12,7 +12,7 @@ const get_data = async () => {
     return await response.json();
   } catch (error) {
     console.error("Failed to fetch data:", error);
-    return null; // Or handle the error as appropriate for your application
+    return null; 
   }
 };
 
