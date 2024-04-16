@@ -26,8 +26,8 @@
       rel="stylesheet"
     />
     <title>Cesium Leaflet</title>
-    <script type="module" crossorigin src="./assets/index-C5XgnAvp.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-SLLP1_mx.css">
+    <script type="module" crossorigin src="./assets/index-1YvNfm21.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-uwUxJZy3.css" />
   </head>
   <body>
     <div id="app">
@@ -37,13 +37,6 @@
           <option value="exploratoryHall">Exploratory Hall</option>
           <!-- Add more buildings as needed -->
         </select>
-
-        <label for="floorSelect">Floor:</label>
-        <select id="floorSelect">
-          <option value="3">Floor 3</option>
-          <!-- Add more floors as needed -->
-        </select>
-
         <label for="startRoomSelect">Start Room:</label>
         <select id="startRoomSelect">
           <!-- Rooms will be populated based on building and floor selection -->
@@ -60,23 +53,31 @@
         <div class="cesiumContainer">
           <h3>Cesium Container</h3>
           <div id="cesiumContainer"></div>
+          <div class="slider" style="display: none">
+            <!-- Initially hidden -->
+            <h3>Slide to view the route</h3>
+            <div id="routeInfo">
+              <span id="startPoint">Starting Point</span>
+              <span id="endPoint">Ending Point</span>
+            </div>
+            <input
+              type="range"
+              id="routeSlider"
+              min="0"
+              max="100"
+              value="0"
+              style="width: 100%"
+            />
+          </div>
         </div>
         <div class="leafletContainer">
           <h3>Leaflet Container</h3>
           <div id="leafletContainer"></div>
-        </div>
-      </div>
-      <div id="roomViews" class="hidden">
-        <div id="startRoomContainer">
-          <h3>Start Room View</h3>
-          <!-- Othe content here -->
-        </div>
-        <div id="endRoomContainer">
-          <h3>End Room View</h3>
-          <!-- Othe content here -->
+          <div id="floorBanner" class="floor-banner">
+            <!-- Floor buttons will be dynamically populated here -->
+          </div>
         </div>
       </div>
     </div>
-
   </body>
 </html>
